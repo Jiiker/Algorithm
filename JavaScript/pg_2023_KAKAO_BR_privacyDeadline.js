@@ -25,7 +25,7 @@ function solution(today, terms, privacies) {
             deadline = deadline - 72;
         }
         
-        while (Math.floor(deadline / 100) % 100 > 12) {
+        if (Math.floor(deadline / 100) % 100 > 12) {
             deadline = deadline + 8800;
         }
         
