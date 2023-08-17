@@ -25,6 +25,7 @@ int main()
             result = length * cycle + remain;
 
         cout << "Case " << testcase << ": " << result << '\n';
+        testcase++;
     }
 
     return 0;
