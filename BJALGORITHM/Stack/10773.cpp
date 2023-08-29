@@ -1,6 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include <string.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -9,30 +7,28 @@ int main()
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-    int dat[100005];
-    int pos = 0;
     int K = 0;
     int sum = 0;
+    stack<int> S;
 
     cin >> K;
 
     for (int i = 0; i < K; i++)
     {
-        int N = 0;
+        int num = 0;
+        cin >> num;
 
-        cin >> N;
-        if (N == 0)
+        if (num == 0)
         {
-            if (pos != 0)
-                pos--;
+            sum = sum - S.top();
+            S.pop();
         }
         else
-            dat[pos++] = N;
-
+        {
+            sum = sum + num;
+            S.push(num);
+        }
     }
-
-    for (int i = 0; i < pos; i++)
-        sum = sum + dat[i];
 
     cout << sum;
 
