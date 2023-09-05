@@ -30,13 +30,7 @@ int main()
     }
   }
 
-  make_heap(V.begin(), V.end());
-
-  for (int i = 0; i < N - 1; i++)
-  {
-    pop_heap(V.begin(), V.end());
-    V.pop_back();
-  }
+  make_heap(V.begin(), V.end(), greater<>());
 
   cout << V.front();
 
