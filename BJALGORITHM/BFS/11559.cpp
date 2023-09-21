@@ -89,7 +89,7 @@ void BFS()
 
   chain++;
   restucturing();
-
+  
   return;
 }
 
