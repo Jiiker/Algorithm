@@ -8,7 +8,6 @@ int main()
     cin.tie(0);
 
     int T = 0; 
-    long long sum = 0;
     int arr[1000005];
 
     cin >> T;
@@ -17,26 +16,22 @@ int main()
     {
         int day;
         int prof[1000005] = { 0 };
-
-        sum = 0;
+        int max_value = 0;
+        long long sum = 0;
         cin >> day;
 
         for (int d = 0; d < day; d++)
         {
             cin >> arr[d];
-            for (int j = 0; j <= d; j++)
-            {
-                if (arr[d] - arr[j] > prof[j])
-                    prof[j] = arr[d] - arr[j];
-            }
         }        
 
-        for (int d = 0; d < day; d++)
+        for (int d = day - 1; d >= 0; d--)
         {
-            if (prof[d] > 0)
-                sum = sum + prof[d];
+            if (arr[d] > max_value)
+                max_value = arr[d];
+            else if (arr[d] < max_value)
+                sum = sum + (max_value - arr[d]);
         }
-
         cout << sum << '\n';
     }
 
