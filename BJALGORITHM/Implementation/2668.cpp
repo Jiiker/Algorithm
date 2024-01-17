@@ -30,10 +30,13 @@ int main()
   while(!Q.empty())
   {
     int cur = Q.front(); Q.pop();
+
     first_row[cur] = 0;
+    
     cnt_second_row[second_row[cur]]--;
     if (cnt_second_row[second_row[cur]] == 0)
       Q.push(second_row[cur]);
+
     second_row[cur] = 0;
   }
 
