@@ -5,7 +5,7 @@ using namespace std;
 struct Node {
   int abs_num, num;
 
-  bool operator<(const Node& n) const {
+  bool operator<(const Node n) const {
     if (abs_num == n.abs_num) {
       return num > n.num;
     } else {
